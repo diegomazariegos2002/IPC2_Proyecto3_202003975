@@ -7,7 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
 """
 
-import os
+import os #permite acceder a ciertas variables del sistema
 
 from django.core.asgi import get_asgi_application
 

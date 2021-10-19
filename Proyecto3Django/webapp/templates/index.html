@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Frontend</h1>
+    <h2>Enviar info</h2>
+    <form method="POST" enctype="multipart/form-data"> <!-- Este enctype es importante porque Django no lo reconoce-->
+      <!--Recordar que aquí es method = POST porque tiene que enviar algo-->
+      {% csrf_token %} <!--No hay que tener muy claro esto pero es importate que es esta linea este ya que Django la implemente por cuestiones de seguridad-->
+      <!--Siempre va dentro de los formularios, siempre-->
+      <input type="file" name="document" id="document" />
+      <input type="submit" value="Enviar archivo" />
+    </form>
+    <h2>Recibir Info</h2>
+    <p>{{ data }}</p> <!-- Este {{data}} es lo que se sustituye Django con lo que esta en el views en el context que le pasamos-->
+  </body>
+</html>
